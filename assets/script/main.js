@@ -10,3 +10,14 @@ $.ajax({
   }).then(function(response) {
     console.log(response);
   });
+
+      // Example queryURL for Genius API
+      var queryURL = "https://api.genius.com/artists/16775?access_token=YCm2sHVhLP7PQ1szB3B4LLJqsksJEA3NqwuY_lIw12BoNGUVjkLem6M7yCSBHHeC"
+
+      $.ajax({
+        url: queryURL,
+        method: "GET",
+        Authorization: "Bearer YCm2sHVhLP7PQ1szB3B4LLJqsksJEA3NqwuY_lIw12BoNGUVjkLem6M7yCSBHHeC"
+      }).then(function(response) {
+        console.log(response);
+      });
