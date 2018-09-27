@@ -1,20 +1,32 @@
 
 body{
-    background-color: #ffb9bb;
+    font-family: Arial, Helvetica, sans-serif;
+    
 }
 
 .wrapper{
-    height: 330px;
+    height: 100%;
     width: 100%;
-    background-color: white;
+    background-color: #BCC8BF;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     position: absolute;
-    opacity: .6;
     filter: blur(0px);
-    background-image: url(../img/bobmarley.jpg);
+    background-image: url(../img/bob.jpg);
     background-size: cover;
+}
+
+h1 {
+    color: white;
+    position: absolute;
+    right: 0px;
+    font-size: 100px;
+    width: 70%;
+    height: 100%;
+    text-align: right;
+    padding: 40px 40px 0px 0px;
+    opacity: .5;
 }
 
 .flex{
@@ -28,12 +40,23 @@ h2{
 
 .container1{
     transform: translate(-50%, -50%);
-    left: 50%;
-    top:50%;
+    left: 28%;
+    top: 91%;
     position: absolute;
     color:white;
+    width: 50%;
 }
 
 .form-control{
     margin: 10px 0;
+    border: 2px;
+    border-radius: 50px;
+    font-size: 25px;
+    padding: 30px;
+    width: 400px;
+    opacity: .5;
+}
+
+.form-control:hover{
+    opacity: .9;
 }
