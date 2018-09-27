@@ -29,7 +29,6 @@ $.ajax({
   headers: {
     apikey: "MGE4NWY2OWQtMWEyOC00NjBjLWEzZTUtZDNjY2M2MmM3MTUw"
   },
-
 }).then(function(response) {
   console.log({response});
 });
