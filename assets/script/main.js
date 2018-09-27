@@ -26,7 +26,9 @@ var napster = "https://api.napster.com/v2.2/artists/top";
 $.ajax({
   url: napster,
   method: "GET",
-  apikey: "YzgwY2IxYmQtY2JmMC00MTcwLWJiZDYtOTUyMTZhMTlhNDRl",
+  headers: {
+    apikey: "MGE4NWY2OWQtMWEyOC00NjBjLWEzZTUtZDNjY2M2MmM3MTUw"
+  },
 }).then(function(response) {
   console.log({response});
 });
