@@ -18,5 +18,7 @@ $.ajax({
     apikey: "MGE4NWY2OWQtMWEyOC00NjBjLWEzZTUtZDNjY2M2MmM3MTUw"
   },
 }).then(function(response) {
-  console.log({response});
+  console.log(response.tracks[4].previewURL);
+  var previewSong = response.tracks[4].previewURL;
+  $("#songPreview").append("<source src=" + response.tracks[4].previewURL + "/>");
 });
