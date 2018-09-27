@@ -1,6 +1,14 @@
 
-// Example queryURL for Genius API
+    var artist = "hello its me"
+      var queryURL = `https://api.genius.com/search?q=${artist}&access_token=cFZv8YyIQLCciFlaZn2Q0nQL-8szl5ES5jHqFo2kyfrheVEmDKen-PBxWgQ0dRVI`;
 
+      $.ajax({
+        url: queryURL,
+        method: "GET",
+  
+      }).then(function(response) {
+        console.log(response);
+      });
 
 document.onkeyup = function(event) {
 
@@ -32,7 +40,5 @@ $.ajax({
     apikey: "MGE4NWY2OWQtMWEyOC00NjBjLWEzZTUtZDNjY2M2MmM3MTUw"
   },
 }).then(function(response) {
-  //console.log({response});
-  console.log(response);
-  //we need to make a call with the artists name in order to get the artist ID to pass into the tracks URL
+  console.log({response});
 });
