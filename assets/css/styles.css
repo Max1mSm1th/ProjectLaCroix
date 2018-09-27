@@ -12,7 +12,6 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
     position: absolute;
-    filter: blur(0px);
     background-image: url(../img/bob.jpg);
     background-size: cover;
 }
@@ -60,3 +59,8 @@ h2{
 .form-control:hover{
     opacity: .9;
 }
+
+
+
+
+
