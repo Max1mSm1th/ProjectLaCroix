@@ -22,16 +22,14 @@
             <span></span>
         </div>
         <div class="bottomBar">
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="search for your lyrics here...">
+            <input type="text" onkeydown="search(this)" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="search for your lyrics here...">
         </div>
     </div>
     <p></p>
-
     <h1>GOT A SONG STUCK IN YOUR HEAD?</h1>
-
-        <audio controls id="songPreview">
-            
-        </audio>
-
+    <div class="results">
+        <audio controls id="songPreview"></audio>
+        <div id="img"></div>
+    </div>
 </body>
 </html>
