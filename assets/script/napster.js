@@ -1,10 +1,9 @@
 
-document.onkeyup = function(event) {
+// document.onkeyup = function(event) {
 
-  // Determines which key was pressed.
-  var userGuess = event.key;
-  console.log("test;");
-};
+//   // Determines which key was pressed.
+//   var userGuess = event.key;
+// };
 
 
 //first get the artist id by sending a request to the API with the artist name
