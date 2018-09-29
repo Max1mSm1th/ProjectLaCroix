@@ -1,26 +1,19 @@
 
-document.onkeyup = function(event) {
 
-  // Determines which key was pressed.
-  var userGuess = event.key;
-  console.log("test;");
-};
+function search(e) {
 
+  var input = "";
 
-//first get the artist id by sending a request to the API with the artist name
-var napster = "https://api.napster.com//v2.2/artists/eminem";
-$.ajax({
-  url: napster,
-  method: "GET",
-  headers: {
-    apikey: "MGE4NWY2OWQtMWEyOC00NjBjLWEzZTUtZDNjY2M2MmM3MTUw"
-  },
-}).then(function(response) {
-  //console.log(response.artists[0].id);
-  var artistID = response.artists[0].id;
-  //console.log(artistID);
+  if(event.key === 'Enter') {
+    //alert(e.value);
+    var temp =e.value;
+    //console.log(temp); 
+    input = temp;
+    //console.log(input);
+  }
 
-  var napster = "https://api.napster.com//v2.2/artists/" + artistID + "/tracks/top";
+  //first get the artist id by sending a request to the API with the artist name
+  var napster = "https://api.napster.com//v2.2/artists/" + temp;
   $.ajax({
     url: napster,
     method: "GET",
@@ -28,11 +21,32 @@ $.ajax({
       apikey: "MGE4NWY2OWQtMWEyOC00NjBjLWEzZTUtZDNjY2M2MmM3MTUw"
     },
   }).then(function(response) {
-    //console.log(response.tracks[4].previewURL);
-    var previewSong = response.tracks[4].previewURL;
-    $("#songPreview").append("<source src=" + response.tracks[4].previewURL + "/>");
+    //console.log(response.artists[0].id);
+    var artistID = response.artists[0].id;
+    //console.log(artistID);
+
+    var napster = "https://api.napster.com//v2.2/artists/" + artistID + "/tracks/top";
+    $.ajax({
+      url: napster,
+      method: "GET",
+      headers: {
+        apikey: "MGE4NWY2OWQtMWEyOC00NjBjLWEzZTUtZDNjY2M2MmM3MTUw"
+      },
+    }).then(function(response) {
+      //console.log(response.tracks[4].previewURL);
+      var previewSong = response.tracks[4].previewURL;
+      $("#songPreview").append("<source src=" + response.tracks[4].previewURL + "/>");
+    });
   });
-});
+
+
+
+
+
+
+}
+
+
 
 
 
