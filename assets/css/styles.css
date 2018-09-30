@@ -6,10 +6,10 @@ body{
 
 .wrapper{
     height: 100%;
-    width: 100%;
+    width: 102%;
     background-color: #BCC8BF;
     top: 50%;
-    left: 50%;
+    left: 49%;
     transform: translate(-50%, -50%);
     position: absolute;
     filter: blur(0px);
@@ -17,17 +17,6 @@ body{
     background-size: cover;
 }
 
-h1 {
-    color: white;
-    position: absolute;
-    right: 0px;
-    font-size: 100px;
-    width: 70%;
-    height: 100%;
-    text-align: right;
-    padding: 40px 40px 0px 0px;
-    opacity: .5;
-}
 
 .flex{
     display:flex;
@@ -50,7 +39,7 @@ h2{
 .form-control{
     margin: 10px 0;
     border: 2px;
-    border-radius: 50px;
+    border-radius: 10px;
     font-size: 25px;
     padding: 30px;
     width: 400px;
@@ -59,4 +48,18 @@ h2{
 
 .form-control:hover{
     opacity: .9;
+}
+
+
+
+h1 {
+    color: white;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 130px;
+    width: 1000px;
+    height: 100%;
+    text-align: right;
+    opacity: .5;
 }
