@@ -76,10 +76,11 @@ h2{
 
 #img{
     position: absolute;
+    bottom: 120px;
 }
 
 #songPreview{
-    display:none;
+
 }
 
 .bottomBar{
