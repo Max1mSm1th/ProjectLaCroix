@@ -1,32 +1,43 @@
 
 body{
-    font-family: Arial, Helvetica, sans-serif;
-    
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: "Open Sans";
 }
+/*  */
 
-.wrapper{
+.imgWrapper{
     height: 100%;
     width: 100%;
-    background-color: #BCC8BF;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     position: absolute;
-    filter: blur(0px);
     background-image: url(../img/bob.jpg);
     background-size: cover;
 }
 
-h1 {
-    color: white;
-    position: absolute;
-    right: 0px;
-    font-size: 100px;
-    width: 70%;
+.wrapperGradient{
+    background: linear-gradient(to right, transparent , rgba(0,0,0, 0.7));
+    position:absolute;
     height: 100%;
-    text-align: right;
-    padding: 40px 40px 0px 0px;
-    opacity: .5;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.textContainer{
+    right:0;
+    position: absolute;
+    
+}
+
+h1 {
+    text-transform: uppercase;
+    color: #ffffff;
+    font-size: 50px;
+    width: 480px;
+    margin: 130px 20px 0px 0px;
 }
 
 .flex{
@@ -59,4 +70,18 @@ h2{
 
 .form-control:hover{
     opacity: .9;
+}
+
+#img{
+    position: absolute;
+}
+
+#songPreview{
+    display:none;
+}
+
+.bottomBar{
+    bottom: 20px;
+    position: absolute;
+    left: 10px;
 }
