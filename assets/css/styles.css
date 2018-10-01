@@ -36,8 +36,10 @@ h1 {
     text-transform: uppercase;
     color: #ffffff;
     font-size: 50px;
-    width: 480px;
-    margin: 130px 20px 0px 0px;
+    width: 350px;
+    margin: 150px 20px 0px 0px;
+    line-height: 60px;
+    letter-spacing: 2px;
 }
 
 .flex{
