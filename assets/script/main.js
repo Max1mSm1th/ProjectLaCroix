@@ -17,6 +17,10 @@ function search(e) {
       method: "GET",
  
     }).then(function(response) {
+      console.log(response);
+      var albumImage = response.response.hits[0].result.header_image_url;
+      //console.log(albumImage);
+      $(".albumImage").append("<img src=" + albumImage + " />");
       var lyrics= response.response['hits'][0]['result']['url'];
       artistName = response.response['hits'][0]['result']['primary_artist']['name'];
       //console.log(response);
@@ -66,29 +70,26 @@ function ajaxCall2(artistId){
     },
   }).then(function(response) {
     //capture img and song via response
+    //console.log(response);
     console.log(response.tracks[1].previewURL);
     var previewSong = response.tracks[4].previewURL;
     $("#songPreview").append("<source src=" + response.tracks[1].previewURL + "/>");
-    console.log(response);
-    //append img and song to html
-    // var image = "http://api.napster.com/v2.2/search/verbose?query=" + artistName + "type=image"
-    // console.log("image: " + image);
-    // console.log(imag)
-
-    //$("#img").append("<img src=" + image + "/>");
+    var image = "http://direct.napster.com/imageserver/v2/artists/" + artistId + "/images/1800x600.jpg"
+    console.log("image: " + image);
+    $(".imgWrapper").addClass("displayNone"); 
+    $(".newImage").append("<img src=" + image + "/>");
   });
  
 }
-
 
 function loader(){
   $(".animation").removeClass("displayBlock");   
 }
 
 $(function() {
-  var body = $('body');
-  var backgrounds = ['url(https://i.ytimg.com/vi/mqpwDJpI3Rc/maxresdefault.jpg)', 'url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/The_Beatles_in_America.JPG/1200px-The_Beatles_in_America.JPG)', 'url(http://celebrityinsider.org/wp-content/uploads/2018/08/travis-scott.jpeg)', 'url(http://stc.below.co.kr/wp-content/uploads/2017/11/IMG_49231.jpg)', 'url(https://d3i6fh83elv35t.cloudfront.net/newshour/app/uploads/2015/12/Screen-Shot-2015-12-12-at-12.31.36-PM.png)', 'url(https://www.letras.com.br/arquivos/bg/wallpapers/6/5407,527.jpg)', 'url(https://i2.wp.com/truetoo.co/wp-content/uploads/2015/11/before-dre-day-a-conversation-with-anderson-paak-and-knxwledge5.jpg?fit=1203%2C803)', 'url(https://i.ticketweb.com/i/00/07/33/42/79_Original.jpg?v=16)'];
-var current = 0;
+  var body = $('.imgWrapper');
+  var backgrounds = ['url(https://i.ytimg.com/vi/mqpwDJpI3Rc/maxresdefault.jpg)', 'url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/The_Beatles_in_America.JPG/1200px-The_Beatles_in_America.JPG)', 'url(http://celebrityinsider.org/wp-content/uploads/2018/08/travis-scott.jpeg)', 'url(https://static1.squarespace.com/static/57a9dbe0c534a5b9ea04ac7f/59db8806706fdde119e912e7/5a0d85bc419202ef1b2f04a4/1510836793017/Screen+Shot+2017-11-13+at+5.11.32+PM.png?format=1500w)', 'url(https://d3i6fh83elv35t.cloudfront.net/newshour/app/uploads/2015/12/Screen-Shot-2015-12-12-at-12.31.36-PM.png)', 'url(https://www.letras.com.br/arquivos/bg/wallpapers/6/5407,527.jpg)'];
+  var current = 0;
 
   function nextBackground() {
     body.css(
@@ -100,8 +101,8 @@ var current = 0;
   }
 
   setTimeout(nextBackground, 5000);
-    body.css('background', backgrounds[0]);
-    
+  body.css('background', backgrounds[0]);
+
  });
  
 // attempting to display in iframe
