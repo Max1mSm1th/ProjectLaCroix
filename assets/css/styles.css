@@ -2,6 +2,7 @@
 body{
     /* font-family: Arial, Helvetica, sans-serif; */
     font-family: "Open Sans";
+    background-size: 100%;
 }
 /*  */
 
@@ -12,7 +13,11 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
     position: absolute;
-    background-image: url(../img/bob.jpg);
+    /* background-image: url(../img/bob.jpg); */
+    background-size: cover;
+}
+
+#background {
     background-size: cover;
 }
 
