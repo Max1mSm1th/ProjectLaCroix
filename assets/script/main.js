@@ -10,7 +10,8 @@ function search(e) {
   if(event.key === 'Enter') {
     var artist= e.value;
     var queryURL = `https://api.genius.com/search?q=${artist}&access_token=cFZv8YyIQLCciFlaZn2Q0nQL-8szl5ES5jHqFo2kyfrheVEmDKen-PBxWgQ0dRVI`;
- 
+   $( ".animation").addClass( "displayBlock" );
+
     $.ajax({
       url: queryURL,
       method: "GET",
@@ -21,8 +22,12 @@ function search(e) {
       //console.log(response);
       //console.log(artistName);
       //console.log(lyrics);
+      //$("#iframe").attr("src", lyrics);
       //return artistName;
       artistName = artistName.toLowerCase();
+      artistName = artistName1(artistName);
+      console.log(artistName);
+      setTimeout(loader, 2000);
       ajaxCall1(artistName);
     });
   }
@@ -30,7 +35,9 @@ function search(e) {
  
 function ajaxCall1(artistName){
   //console.log("ajaxCall1");
-  var napster = "https://api.napster.com/v2.2/artists/" + artistName;
+  var napster = "http://api.napster.com/v2.2/search/verbose?query=" + artistName
+  console.log(napster);
+  // napster = "https://api.napster.com/v2.2/artists/" + artistName;
   //console.log("artist Name:  " + artistName);
   $.ajax({
     url: napster,
@@ -39,16 +46,17 @@ function ajaxCall1(artistName){
       apikey: "MGE4NWY2OWQtMWEyOC00NjBjLWEzZTUtZDNjY2M2MmM3MTUw"
     },
   }).then(function(response) {
-    //console.log("artist name goes to napster to get artist ID");
-    var artistID = response.artists[0].id;
-    //console.log("artist ID: " + artistID);
-    ajaxCall2(artistID);
+    console.log(response);
+    //var artistID = response.artists[0].id;
+    var artistId = response.search.data.tracks[0].artistId;
+    console.log(artistId);
+    ajaxCall2(artistId);
   });
 }
  
-function ajaxCall2(artistID){
+function ajaxCall2(artistId){
   //console.log("ajaxCall2");
-  var napster = "https://api.napster.com/v2.2/artists/" + artistID + "/tracks/top";
+  var napster = "https://api.napster.com/v2.2/artists/" + artistId + "/tracks/top";
  
   $.ajax({
     url: napster,
@@ -58,17 +66,25 @@ function ajaxCall2(artistID){
     },
   }).then(function(response) {
     //capture img and song via response
-    console.log(response.tracks[4].previewURL);
+    console.log(response.tracks[1].previewURL);
     var previewSong = response.tracks[4].previewURL;
-    $("#songPreview").append("<source src=" + response.tracks[4].previewURL + "/>");
- 
+    $("#songPreview").append("<source src=" + response.tracks[1].previewURL + "/>");
+    console.log(response);
     //append img and song to html
-    var image = "http://direct.napster.com/imageserver/v2/artists/" + artistID + "/images/633x422.jpg";
-    console.log(image);
-    $("#img").append("<img src=" + image + "/>");
+    // var image = "http://api.napster.com/v2.2/search/verbose?query=" + artistName + "type=image"
+    // console.log("image: " + image);
+    // console.log(imag)
+
+    //$("#img").append("<img src=" + image + "/>");
   });
  
 }
+
+
+function loader(){
+  $(".animation").removeClass("displayBlock");   
+}
+
  
 // attempting to display in iframe
 // function var1() {
@@ -85,5 +101,11 @@ function ajaxCall2(artistID){
 // }).then(function(response) {
 // //console.log(response);
 // });
- 
- 
+
+//split, splice and slice
+//console.log(artistName1("Jackie Gaherity")) 
+
+function artistName1(string){
+   var newString = string.split(' ').join('+');
+   return newString
+ }
