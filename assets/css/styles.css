@@ -10,7 +10,7 @@ body{
     height: 100%;
     width: 100%;
     top: 50%;
-    left: 50%;
+    left: 49%;
     transform: translate(-50%, -50%);
     position: absolute;
     /* background-image: url(../img/bob.jpg); */
@@ -76,7 +76,7 @@ h1 {
     opacity: .5;
 }
 
-.flex{
+.flex {
     display:flex;
 }
 
@@ -97,7 +97,7 @@ h2{
 .form-control{
     margin: 10px 0;
     border: 2px;
-    border-radius: 50px;
+    border-radius: 10px;
     font-size: 25px;
     padding: 30px;
     width: 400px;

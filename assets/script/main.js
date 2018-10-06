@@ -4,8 +4,6 @@
 var artistName;
 var previewSong;
  
-
-
 function search(e) {
   var input ="";
  
@@ -75,7 +73,6 @@ function ajaxCall2(artistId){
     //console.log(response);
     console.log(response.tracks[1].previewURL);
     var previewSong = response.tracks[4].previewURL;
-  
     $("#songPreview").append("<source src=" + response.tracks[1].previewURL + "/>");
     var image = "http://direct.napster.com/imageserver/v2/artists/" + artistId + "/images/1800x600.jpg"
     console.log("image: " + image);
