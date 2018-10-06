@@ -6,6 +6,11 @@ body{
 }
 /*  */
 
+.background {
+    width: 100%;
+    height: 100%;
+}
+
 .imgWrapper{
     height: 100%;
     width: 100%;
@@ -14,26 +19,31 @@ body{
     transform: translate(-50%, -50%);
     position: absolute;
     /* background-image: url(../img/bob.jpg); */
-    background-size: cover;
+    
 }
 
 .albumImage {
-    position:absolute;
-    /*do your positioning here */
+    left: 90px;
+    position: absolute;
+    top: 15%;
+    left: 90px;
+    border: 2px;
+    border-radius: 2px;
 }
 
 .albumImage img{
-    position:absolute;
     width:300px;
     height: 300px;
+    border: 2px;
+    border-radius: 25px;
 }
 
 #background {
     background-size: cover;
+    
 }
 
 .newImage{
-        /* background: linear-gradient(to right, transparent , rgba(0,0,0, 0.7)); */
         position: absolute;
         height: 100%;
         width: 100%;
@@ -41,11 +51,14 @@ body{
         background-size: cover;
         left: 50%;
         transform: translate(-50%, -50%);
+        
+        
 }
 
 .newImage > img{
     width: 100%;
     height: 100%;
+    
 }
 
 .wrapperGradient{
@@ -116,6 +129,9 @@ h2{
 #songPreview{
     position: absolute;
     margin: 275px 0px 0px 0px;
+    width: 200px;
+    display:none;
+    z-index: 500;
 }
 
 .bottomBar{
@@ -144,7 +160,7 @@ h2{
 
 .results {
     position: absolute;
-    top: 20%;
+    top: 15%;
     left: 90px;
     transform: translate(-50%, -50%);
     border: 2px;
