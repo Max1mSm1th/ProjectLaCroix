@@ -10,8 +10,9 @@ function search(e) {
   if(event.key === 'Enter') {
     var artist= e.value;
     var queryURL = `https://api.genius.com/search?q=${artist}&access_token=cFZv8YyIQLCciFlaZn2Q0nQL-8szl5ES5jHqFo2kyfrheVEmDKen-PBxWgQ0dRVI`;
-   $( ".animation").addClass( "displayBlock" );
-
+    $(".albumImage").empty();
+    $(".newImage").empty();
+    $( ".animation").addClass( "displayBlock" );
     $.ajax({
       url: queryURL,
       method: "GET",
@@ -31,7 +32,8 @@ function search(e) {
       artistName = artistName.toLowerCase();
       artistName = artistName1(artistName);
       console.log(artistName);
-      setTimeout(loader, 2000);
+      setTimeout(loader, 1500);
+      setTimeout(loader, 1500);
       ajaxCall1(artistName);
     });
   }
@@ -73,17 +75,20 @@ function ajaxCall2(artistId){
     //console.log(response);
     console.log(response.tracks[1].previewURL);
     var previewSong = response.tracks[4].previewURL;
+    
     $("#songPreview").append("<source src=" + response.tracks[1].previewURL + "/>");
     var image = "http://direct.napster.com/imageserver/v2/artists/" + artistId + "/images/1800x600.jpg"
     console.log("image: " + image);
     $(".imgWrapper").addClass("displayNone"); 
     $(".newImage").append("<img src=" + image + "/>");
+    $("#songPreview").clear();
   });
  
 }
 
 function loader(){
-  $(".animation").removeClass("displayBlock");   
+  $(".animation").removeClass("displayBlock"); 
+  $("#songPreview").removeClass("displayBlock"); 
 }
 
 $(function() {

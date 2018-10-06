@@ -6,34 +6,44 @@ body{
 }
 /*  */
 
+.background {
+    width: 100%;
+    height: 100%;
+}
+
 .imgWrapper{
     height: 100%;
     width: 100%;
     top: 50%;
-    left: 50%;
+    left: 49%;
     transform: translate(-50%, -50%);
     position: absolute;
     /* background-image: url(../img/bob.jpg); */
-    background-size: cover;
+    
 }
 
 .albumImage {
-    position:absolute;
-    /*do your positioning here */
+    left: 90px;
+    position: absolute;
+    top: 15%;
+    left: 90px;
+    border: 2px;
+    border-radius: 2px;
 }
 
 .albumImage img{
-    position:absolute;
     width:300px;
     height: 300px;
+    border: 2px;
+    border-radius: 25px;
 }
 
 #background {
     background-size: cover;
+    
 }
 
 .newImage{
-        /* background: linear-gradient(to right, transparent , rgba(0,0,0, 0.7)); */
         position: absolute;
         height: 100%;
         width: 100%;
@@ -41,11 +51,14 @@ body{
         background-size: cover;
         left: 50%;
         transform: translate(-50%, -50%);
+        
+        
 }
 
 .newImage > img{
     width: 100%;
     height: 100%;
+    
 }
 
 .wrapperGradient{
@@ -67,15 +80,16 @@ body{
 h1 {
     text-transform: uppercase;
     color: #ffffff;
-    font-size: 90px;
-    width: 560px;
-    margin: 180px 20px 0px 0px;
-    line-height: 90px;
-    letter-spacing: 2px;
+    font-size: 100px;
+    width: 500px;
+    margin: 40px 40px 0px 0px;
+    line-height: .8;
     font-weight: 800;
+    text-align: right;
+    opacity: .5;
 }
 
-.flex{
+.flex {
     display:flex;
 }
 
@@ -96,7 +110,7 @@ h2{
 .form-control{
     margin: 10px 0;
     border: 2px;
-    border-radius: 50px;
+    border-radius: 10px;
     font-size: 25px;
     padding: 30px;
     width: 400px;
@@ -113,13 +127,17 @@ h2{
 }
 
 #songPreview{
-
+    position: absolute;
+    margin: 275px 0px 0px 0px;
+    width: 200px;
+    display:none;
+    z-index: 500;
 }
 
 .bottomBar{
-    bottom: 20px;
+    bottom: 40px;
     position: absolute;
-    left: 10px;
+    left: 40px;
 }
 
 .animation{
@@ -138,4 +156,14 @@ h2{
 
 .displayNone{
     display:none !important;
+}
+
+.results {
+    position: absolute;
+    top: 15%;
+    left: 90px;
+    transform: translate(-50%, -50%);
+    border: 2px;
+    border-radius: 25px;
+    
 }
