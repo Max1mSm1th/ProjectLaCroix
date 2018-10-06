@@ -1,31 +1,78 @@
 
 body{
-    font-family: Arial, Helvetica, sans-serif;
-    
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: "Open Sans";
+    background-size: 100%;
 }
+/*  */
 
-.wrapper{
+.imgWrapper{
     height: 100%;
     width: 100%;
-    background-color: #BCC8BF;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     position: absolute;
-    filter: blur(0px);
-    background-image: url(../img/bob.jpg);
+    /* background-image: url(../img/bob.jpg); */
     background-size: cover;
 }
 
-h1 {
-    color: white;
-    position: absolute;
-    right: 0px;
-    font-size: 100px;
-    width: 70%;
+.albumImage {
+    position:absolute;
+    /*do your positioning here */
+}
+
+.albumImage img{
+    position:absolute;
+    width:300px;
+    height: 300px;
+}
+
+#background {
+    background-size: cover;
+}
+
+.newImage{
+        /* background: linear-gradient(to right, transparent , rgba(0,0,0, 0.7)); */
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 50%;
+        background-size: cover;
+        left: 50%;
+        transform: translate(-50%, -50%);
+}
+
+.newImage > img{
+    width: 100%;
     height: 100%;
+}
+
+.wrapperGradient{
+    background: linear-gradient(to right, transparent , rgba(0,0,0, 0.7));
+    position:absolute;
+    height: 100%;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.textContainer{
+    right:0;
+    position: absolute;
+    
+}
+
+h1 {
+    text-transform: uppercase;
+    color: #ffffff;
+    font-size: 100px;
+    width: 500px;
+    margin: 40px 40px 0px 0px;
+    line-height: .8;
+    font-weight: 800;
     text-align: right;
-    padding: 40px 40px 0px 0px;
     opacity: .5;
 }
 
@@ -59,4 +106,48 @@ h2{
 
 .form-control:hover{
     opacity: .9;
+}
+
+#img{
+    position: absolute;
+    bottom: 120px;
+}
+
+#songPreview{
+    position: absolute;
+    margin: 275px 0px 0px 0px;
+}
+
+.bottomBar{
+    bottom: 40px;
+    position: absolute;
+    left: 40px;
+}
+
+.animation{
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 500;
+    position: absolute;
+    display:none;
+}
+
+.displayBlock{
+    display:block !important;
+}
+
+.displayNone{
+    display:none !important;
+}
+
+.results {
+    position: absolute;
+    top: 20%;
+    left: 90px;
+    transform: translate(-50%, -50%);
+    border: 2px;
+    border-radius: 25px;
+    
 }
